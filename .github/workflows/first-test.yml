@@ -1,0 +1,17 @@
+name: First Actions test
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print context
+        run: |
+          echo "Hello from GitHub Actions!"
+          echo "Repository: ${{ github.repository }}"
+          echo "Triggering actor: ${{ github.actor }}"
+          echo "Event: ${{ github.event_name }}"
+          echo "Timestamp: $(date -u)"
